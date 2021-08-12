@@ -6,7 +6,7 @@
 #    By: jvanden- <jvanden-@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/08/11 15:18:43 by jvanden-          #+#    #+#              #
-#    Updated: 2021/08/11 15:48:38 by jvanden-         ###   ########.fr        #
+#    Updated: 2021/08/12 17:07:00 by jvanden-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,7 +31,11 @@ SRCS_UTILS	=	ft_itoa.c \
 				ft_putchar.c \
 				ft_putstr.c \
 				ft_strlen.c \
-				ft_atoi.c
+				ft_atoi.c \
+				ft_is_only_number.c \
+				ft_print_int.c \
+				ft_straddc.c \
+				ft_strdup.c
 
 SRCS_SERVER2=	$(addprefix $(SRCS_PATH), $(SRCS_SERVER)) \
 				$(addprefix $(SRCS_PATH)utils/, $(SRCS_UTILS))
@@ -46,8 +50,6 @@ OBJ_CLIENT	=	$(SRCS_CLIENT2:.c=.o)
 
 all : $(NAME_SERVER) $(NAME_CLIENT)
 
-
-
 $(NAME_SERVER) : $(OBJ_SERVER)
 	@$(CC) -o $(NAME_SERVER) $(OBJ_SERVER) $(CFLAGS)
 
@@ -61,8 +63,5 @@ fclean: clean
 	@/bin/rm -rf $(NAME_SERVER) $(NAME_CLIENT)
 
 re: fclean all
-
-launch_server: fclean $(NAME_SERVER)
-	./server
 	
 .PHONY: all re clean fclean 
