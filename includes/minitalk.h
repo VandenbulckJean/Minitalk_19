@@ -6,7 +6,7 @@
 /*   By: jvanden- <jvanden-@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/11 12:40:39 by jvanden-          #+#    #+#             */
-/*   Updated: 2021/08/12 16:49:23 by jvanden-         ###   ########.fr       */
+/*   Updated: 2021/08/12 17:19:04 by jvanden-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,5 +36,6 @@ int		ft_is_only_number(char *str);
 char	*ft_strdup(const char *s1);
 void	ft_print_int(int nbr);
 char	*ft_straddc(char *str, char c);
+int		check_pid(char *str);
 
 #endif

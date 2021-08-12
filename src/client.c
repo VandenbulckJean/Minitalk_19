@@ -6,7 +6,7 @@
 /*   By: jvanden- <jvanden-@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/11 15:28:06 by jvanden-          #+#    #+#             */
-/*   Updated: 2021/08/12 17:06:02 by jvanden-         ###   ########.fr       */
+/*   Updated: 2021/08/12 17:21:54 by jvanden-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,16 +87,21 @@ static void	handle_signal(int signo)
 
 int	main(int argc, char **argv)
 {
-	if (argc != 3 || !ft_is_only_number(argv[1]))
+	if (argc != 3)
 	{
 		write(2, "ERROR: arguments invalid.\n", 26);
+		exit(EXIT_FAILURE);
+	}
+	g_data.correspondent_pid = check_pid(argv[1]);
+	if (g_data.correspondent_pid == -1)
+	{
+		write(2, "ERROR: PID must be a number between 0 and 32768.\n", 49);
 		exit(EXIT_FAILURE);
 	}
 	g_data.text = ft_strdup(argv[2]);
 	if (!g_data.text)
 		error_manager();
 	g_data.current_sending_char = g_data.text;
-	g_data.correspondent_pid = ft_atoi(argv[1]);
 	g_data.current_bit = 0;
 	signal(SIGUSR1, handle_signal);
 	signal(SIGUSR2, handle_signal);

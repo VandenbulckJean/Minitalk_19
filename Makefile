@@ -6,7 +6,7 @@
 #    By: jvanden- <jvanden-@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/08/11 15:18:43 by jvanden-          #+#    #+#              #
-#    Updated: 2021/08/12 17:07:00 by jvanden-         ###   ########.fr        #
+#    Updated: 2021/08/12 17:22:11 by jvanden-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,7 +35,8 @@ SRCS_UTILS	=	ft_itoa.c \
 				ft_is_only_number.c \
 				ft_print_int.c \
 				ft_straddc.c \
-				ft_strdup.c
+				ft_strdup.c \
+				check_pid.c
 
 SRCS_SERVER2=	$(addprefix $(SRCS_PATH), $(SRCS_SERVER)) \
 				$(addprefix $(SRCS_PATH)utils/, $(SRCS_UTILS))
