@@ -6,7 +6,7 @@
 /*   By: jvanden- <jvanden-@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/11 15:28:06 by jvanden-          #+#    #+#             */
-/*   Updated: 2021/08/12 17:21:54 by jvanden-         ###   ########.fr       */
+/*   Updated: 2021/08/25 12:12:49 by jvanden-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,7 +95,7 @@ int	main(int argc, char **argv)
 	g_data.correspondent_pid = check_pid(argv[1]);
 	if (g_data.correspondent_pid == -1)
 	{
-		write(2, "ERROR: PID must be a number between 0 and 32768.\n", 49);
+		write(2, "ERROR: PID must be a number between 0 and 99998.\n", 49);
 		exit(EXIT_FAILURE);
 	}
 	g_data.text = ft_strdup(argv[2]);

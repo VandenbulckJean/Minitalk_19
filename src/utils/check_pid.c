@@ -6,7 +6,7 @@
 /*   By: jvanden- <jvanden-@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/12 17:14:26 by jvanden-          #+#    #+#             */
-/*   Updated: 2021/08/12 17:22:25 by jvanden-         ###   ########.fr       */
+/*   Updated: 2021/08/25 12:12:38 by jvanden-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	check_pid(char *str)
 	if (!(ft_is_only_number(str)) || ft_strlen(str) > 5)
 		return (-1);
 	pid = ft_atoi(str);
-	if (pid < 0 || pid > 32768)
+	if (pid < 0 || pid > 99998)
 		return (-1);
 	return (pid);
 }
